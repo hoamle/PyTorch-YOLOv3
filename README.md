@@ -1,4 +1,4 @@
-# Use pre-train PyTorch-YOLOv3 for object detection for PS4 games
+# Use pre-trained PyTorch-YOLOv3 for object detection for PS4 games
 
 <p align="center"><img src="ps4_streaming.jpg" width="480"\></p>
 
