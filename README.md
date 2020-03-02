@@ -2,9 +2,11 @@
 
 <p align="center"><img src="ps4_streaming.jpg" width="480"\></p>
 
-You will need:
+- Checkout and build the following as the streaming server:
+
     https://github.com/peidaqi/chiaki/tree/machine-learning
-as the streaming server. Follow the Pytorch-YOLOv3 installation guide below to set-up the model weights.
+
+- Follow the Pytorch-YOLOv3 installation guide below to set-up the model weights.
 
 - Run ps4_yolov3.py for a demo of object detection in PS4 games with the pre-trained pytorch yolov3 model.
 - ps4_send_jsevent.py shows how to control PS4 with joystick events.
