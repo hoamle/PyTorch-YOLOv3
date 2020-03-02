@@ -1,3 +1,14 @@
+# Use pre-train PyTorch-YOLOv3 for object detection for PS4 games
+
+<p align="center"><img src="ps4_streaming.jpg" width="480"\></p>
+
+You will need:
+    https://github.com/peidaqi/chiaki
+as the streaming server. Follow the Pytorch-YOLOv3 installation guide below to set-up the model weights.
+
+- Run ps4_yolov3.py for a demo of object detection in PS4 games with the pre-trained pytorch yolov3 model.
+- ps4_send_jsevent.py shows how to control PS4 with joystick events.
+
 # PyTorch-YOLOv3
 A minimal PyTorch implementation of YOLOv3, with support for training, inference and evaluation.
 

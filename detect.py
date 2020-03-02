@@ -21,6 +21,8 @@ import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 from matplotlib.ticker import NullLocator
 
+import numpy as np
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--image_folder", type=str, default="data/samples", help="path to dataset")
@@ -71,11 +73,16 @@ if __name__ == "__main__":
     for batch_i, (img_paths, input_imgs) in enumerate(dataloader):
         # Configure input
         input_imgs = Variable(input_imgs.type(Tensor))
+        # print(input_imgs.shape)
 
         # Get detections
         with torch.no_grad():
+            print(input_imgs.shape)
+
             detections = model(input_imgs)
+            # np.save('det1', detections.detach().numpy())
             detections = non_max_suppression(detections, opt.conf_thres, opt.nms_thres)
+            # print(detections)
 
         # Log progress
         current_time = time.time()
@@ -105,7 +112,7 @@ if __name__ == "__main__":
 
         # Draw bounding boxes and labels of detections
         if detections is not None:
-            # Rescale boxes to original image
+            # Rescale boxes to original image            
             detections = rescale_boxes(detections, opt.img_size, img.shape[:2])
             unique_labels = detections[:, -1].cpu().unique()
             n_cls_preds = len(unique_labels)
